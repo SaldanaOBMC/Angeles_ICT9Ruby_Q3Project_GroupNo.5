@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q3 Project</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .custom-navbar {
+            background-color: #0d3b66;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            height: 70px;
+            min-height: 70px;
+        }
+
+          .form-control {
+        border-radius: 20px;
+    }
+
+        .nav-link {
+            color: #ffffff;
+    }
+
+        .nav-link:hover {
+            color: #ffc107;
+        }
+
+        .navbar-search-input {
+        background-color: #ffffff;
+        border: none;
+    }
+
+    .navbar-search-btn {
+        background-color: #ffc107;
+        color: #0d3b66;
+        border: none;
+    }
+    
+    .navbar-search-btn:hover {
+        background-color: #e0a800;
+    }
+
+   .form-control {
+    height: 40px;
+    padding: 8px 12px;
+    font-size: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 950px;
+  }
+
+.book-ride-btn {
+    background-color: #0d3b66;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.book-ride-btn:hover {
+    background-color: #0a2a4a;
+}
+
+.fare-display {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0d3b66;
+    margin-top: 15px;
+}
+
+        body {
+        background-color: #e3f2fd;
+        font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    }
+
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-sm navbar-dark custom-navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="M LRT.png" alt="logo" height="50px" width="70px"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html" target="_self">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html" target="_self">FARE MATRIX</a>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="schedule.html" target="_self">SCHEDULE</a>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="confirmation.html" target="_self">REGISTRATION</a>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="confirmation.html" target="_self">CONFIRMATION</a>
+                </li> 
+            </ul>
+
+            <form class="d-flex ms-auto" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" style="width: 250px; border-radius: 10px;">
+                <button class="btn navbar-search-btn" type="submit" style="border-radius: 10px;">Search</button>
+            </form>
+        </div>
+    </div>
+</nav><br>
+
+<div class-container style="background-color: #ffc107; width: 550px; margin: 50px auto; padding: 15px; border-radius: 10px;">
+<h2 style="text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: #212121;">WHERE TO</h2>
+</div>
+
+<div class-container style="background-color: #ffc107; width: 1000px; margin: 50px auto; padding: 20px; border-radius: 10px; text-align: center;">
+<p style="text-align: center; font-weight: bold; font-size: larger; color: #212121;">Map of Central Manila</p>
+
+<img src="Manila.jpg" alt="Manila" style="display: block; margin: 0 auto;">
+
+<label style="font-weight: bold; font-size: larger; color: #212121; display: block; margin-bottom: 5px;">PICK UP POINT</label>
+
+<select class="form-control" id="pickup-select">
+  <option>Santolan</option>
+  <option>Katipunan</option>
+  <option>Anonas</option>
+  <option>Araneta Center-Cubao</option>
+  <option>Betty Go-Belmonte</option>
+  <option>Gilmore</option>
+  <option>J. Ruiz</option>
+  <option>V. Mapa</option>
+  <option>Pureza</option>
+  <option>Legarda</option>
+  <option>Recto</option>
+</select>
+<br>
+
+<label style="font-weight: bold; font-size: larger; color: #212121; display: block; margin-bottom: 5px;">DROP OFF POINT</label>
+
+<select class="form-control" id="dropoff-select">
+  <option>Santolan</option>
+  <option>Katipunan</option>
+  <option>Anonas</option>
+  <option>Araneta Center-Cubao</option>
+  <option>Betty Go-Belmonte</option>
+  <option>Gilmore</option>
+  <option>J. Ruiz</option>
+  <option>V. Mapa</option>
+  <option>Pureza</option>
+  <option>Legarda</option>
+  <option>Recto</option>
+</select>
+<br>
+
+<select id="discount-type" class="form-control" style="width: 950px; margin: 0 auto;">
+  <option value="none">No Discount</option>
+  <option value="senior">Senior Citizen</option>
+  <option value="pwd">PWD</option>
+  <option value="student">Student</option>
+</select>
+
+<label>TOTAL FARE</label>
+
+<p id="fare-display" class="fare-display">₱0.00</p>
+
+<button class="book-ride-btn" onclick="book()">BOOK RIDE</button>
+</div>
+
+<script>
+        // station pricing
+    var distances = {
+        'Santolan': 0,
+        'Katipunan': 2.5,
+        'Anonas': 4,
+        'Araneta Center-Cubao': 5.5,
+        'Betty Go-Belmonte': 7,
+        'Gilmore': 8.5,
+        'J. Ruiz': 10,
+        'V. Mapa': 11.5,
+        'Pureza': 13,
+        'Legarda': 14.5,
+        'Recto': 16
+    };
+
+    
+    var pickup = document.getElementById('pickup-select');
+    var dropoff = document.getElementById('dropoff-select');
+    var discount = document.getElementById('discount-type');
+    var fareDisplay = document.getElementById('fare-display');
+
+    // Calculating fare
+    function calculate() {
+        var p = pickup.value;
+        var d = dropoff.value;
+        var disc = discount.value;
+
+        if (p == '' || d == '') {
+            fareDisplay.innerHTML = '₱0.00';
+            return;
+        }
+
+        // Distance between stations
+        var dist = Math.abs(distances[p] - distances[d]);
+
+        // Base fare is 50 for first 2km
+        var fare = 50;
+        if (dist > 2) {
+            fare = fare + (dist - 2) * 15;
+        }
+
+        if (disc != 'none') {
+            fare = fare * 0.8;
+        }
+
+        fareDisplay.innerHTML = '₱' + fare.toFixed(2);
+    }
+
+
+    function book() {
+        var p = pickup.value;
+        var d = dropoff.value;
+        var disc = discount.value;
+        var fare = 0;
+
+        if (p == '' || d == '') {
+            alert('Please select locations!');
+            return;
+        }
+
+        if (p == d) {
+            alert('Pickup and drop-off must be different!');
+            return;
+        }
+
+        var dist = Math.abs(distances[p] - distances[d]);
+        fare = 50;
+        if (dist > 2) {
+            fare = fare + (dist - 2) * 15;
+        }
+        if (disc != 'none') {
+            fare = fare * 0.8;
+        }
+
+        var msg = 'You have successfully booked a trip!';
+        alert(msg);
+        }
+
+    pickup.onchange = calculate;
+    dropoff.onchange = calculate;
+    discount.onchange = calculate;
+
+    calculate();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

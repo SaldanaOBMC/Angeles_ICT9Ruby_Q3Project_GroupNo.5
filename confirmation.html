@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M/LRT Registration</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+background-color:#e3f2fd;
+color:white;
+font-family:Arial, sans-serif;
+}
+
+.navbar{
+background-color:#123f6b;
+border-bottom:3px solid #f4b400;
+}
+
+.navbar a{
+color:white;
+margin-right:15px;
+text-decoration:none;
+font-size:14px;
+}
+
+.navbar a:hover{
+color:#f4b400;
+}
+
+.navbar-search-btn {
+background-color: #ffc107;
+color: #0d3b66;
+border: none;
+}
+
+.navbar-search-btn:hover {
+background-color: #e0a800;
+}
+
+.logo{
+height:40px;
+margin-right:10px;
+}
+
+.box{
+background-color:#174a7c;
+border:2px solid #f4b400;
+border-radius:10px;
+padding:30px;
+max-width:450px;
+margin:40px auto;
+}
+
+h1{
+text-align:center;
+letter-spacing:3px;
+color:#f4b400;
+}
+
+label{
+font-size:13px;
+color:#c9e3ff;
+}
+
+input[type=text],
+input[type=number],
+input[type=password],
+input[type=file]{
+width:100%;
+padding:8px;
+margin-bottom:12px;
+background-color:#0e2e4f;
+border:1px solid #f4b400;
+border-radius:5px;
+color:white;
+}
+
+.photo{
+width:90px;
+height:90px;
+border-radius:50%;
+border:3px solid #f4b400;
+display:block;
+margin:0 auto 10px;
+object-fit:cover;
+}
+
+.btn-submit{
+width:100%;
+background-color:#f4b400;
+color:black;
+border:none;
+padding:10px;
+border-radius:6px;
+font-size:15px;
+margin-bottom:8px;
+cursor:pointer;
+}
+
+.btn-cancel{
+width:100%;
+background-color:white;
+color:#f4b400;
+border:1px solid #f4b400;
+padding:9px;
+border-radius:6px;
+font-size:15px;
+cursor:pointer;
+}
+
+.topbtn{
+background-color:#f4b400;
+border:none;
+color:black;
+padding:6px 12px;
+border-radius:5px;
+font-size:13px;
+}
+
+footer{
+background-color: #0e2e4f;
+text-align:center;
+padding:15px;
+font-size:13px;
+color:#b8d8ff;
+margin-top:20px;
+border-top:1px solid #f4b400;
+}
+
+footer a{
+color:#b8d8ff;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-sm navbar-dark custom-navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="M LRT.png" alt="logo" height="50px" width="70px"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html" target="_self">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html" target="_self">FARE MATRIX</a>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="schedule.html" target="_self">SCHEDULE</a>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="confirmation.html" target="_self">REGISTRATION</a>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="confirmation.html" target="_self">CONFIRMATION</a>
+                </li> 
+            </ul>
+
+            <form class="d-flex ms-auto" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" style="width: 250px; border-radius: 10px;">
+                <button class="btn navbar-search-btn" type="submit" style="border-radius: 10px;">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="box">
+
+<h1>REGISTRATION</h1>
+
+<p style="color:#f4b400;font-size:13px;">Instructions</p>
+<p style="font-size:13px;color:#c9e3ff;">Fill out all required fields then press submit.</p>
+
+<img id="profilePreview" src="https://i.pravatar.cc/150?img=47" class="photo">
+
+<input type="file" id="photoInput" accept="image/*">
+<button class="topbtn w-100 mb-3" onclick="uploadPhoto()">Upload Photo</button>
+
+<label>First Name</label>
+<input type="text" id="firstName" placeholder="First Name">
+
+<label>Last Name</label>
+<input type="text" id="lastName" placeholder="Last Name">
+
+<label>Age</label>
+<input type="number" id="age" placeholder="Age">
+
+<label>Contact Number</label>
+<input type="text" id="contact" placeholder="09XXXXXXXXX">
+
+<label>Username</label>
+<input type="text" id="username" placeholder="Username">
+
+<label>Password</label>
+<input type="password" id="password" placeholder="Password">
+
+<br>
+
+<input type="checkbox" id="terms">
+<label>I accept the Terms of Use and Privacy Policy</label>
+
+<br><br>
+
+<button class="btn-submit" onclick="submitForm()">Create my account</button>
+<button class="btn-cancel" onclick="cancelForm()">Cancel</button>
+
+</div>
+
+<footer>
+<a href="https://www.w3schools.com" target="_blank">W3Schools</a>
+</footer>
+
+<script>
+
+function goHome(){
+alert("Leads to Home page. Continue?");
+}
+
+function uploadPhoto(){
+
+var file=document.getElementById("photoInput").files[0];
+
+if(file){
+
+var reader=new FileReader();
+
+reader.onload=function(e){
+document.getElementById("profilePreview").src=e.target.result;
+alert("Profile photo uploaded.");
+};
+
+reader.readAsDataURL(file);
+
+}else{
+alert("Choose a photo first.");
+}
+
+}
+
+function submitForm(){
+
+var firstName=document.getElementById("firstName").value;
+var lastName=document.getElementById("lastName").value;
+var age=document.getElementById("age").value;
+var contact=document.getElementById("contact").value;
+var username=document.getElementById("username").value;
+var password=document.getElementById("password").value;
+var terms=document.getElementById("terms").checked;
+
+if(firstName==""||lastName==""||age==""||contact==""||username==""||password==""){
+alert("Fill out all fields.");
+return;
+}
+
+if(age<18){
+alert("Must be 18 or older.");
+return;
+}
+
+if(terms==false){
+alert("Accept the Terms of Use.");
+return;
+}
+
+alert("Account created. Welcome "+firstName+"!");
+
+}
+
+function cancelForm(){
+
+var confirmed=confirm("Cancel registration?");
+
+if(confirmed){
+
+document.getElementById("firstName").value="";
+document.getElementById("lastName").value="";
+document.getElementById("age").value="";
+document.getElementById("contact").value="";
+document.getElementById("username").value="";
+document.getElementById("password").value="";
+document.getElementById("terms").checked=false;
+
+document.getElementById("profilePreview").src="https://i.pravatar.cc/150?img=47";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

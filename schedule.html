@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Q3 Project</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css " rel="stylesheet">
+</head>
+
+<style>
+  .custom-navbar {
+    background-color: #0d3b66;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 70px;
+    min-height: 70px;
+}
+
+  .nav-link {
+    color: #ffffff;
+}
+
+.nav-link:hover {
+    color: #ffc107;
+}
+
+.navbar-search-input {
+    background-color: #ffffff;
+    border: none;
+}
+
+.navbar-search-btn {
+    background-color: #ffc107;
+    color: #0d3b66;
+    border: none;
+}
+
+.navbar-search-btn:hover {
+    background-color: #e0a800;
+}
+
+body {
+    background-color: #e3f2fd;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+}
+</style>
+
+<body>
+
+<nav class="navbar navbar-expand-sm navbar-dark custom-navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="M LRT.png" alt="logo" height="50px" width="70px"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html" target="_self">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html" target="_self">FARE MATRIX</a>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="schedule.html" target="_self">SCHEDULE</a>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="confirmation.html" target="_self">REGISTRATION</a>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="confirmation.html" target="_self">CONFIRMATION</a>
+                </li> 
+            </ul>
+
+            <form class="d-flex ms-auto" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" style="width: 250px; border-radius: 10px;">
+                <button class="btn navbar-search-btn" type="submit" style="border-radius: 10px;">Search</button>
+            </form>
+        </div>
+    </div>
+</nav><br>
+
+<div class-container style="background-color: #ffc107; width: 550px; margin: 50px auto; padding: 15px; border-radius: 10px;">
+<h2 style="text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: #212121;">SCHEDULE</h2>
+</div>
+
+<div style="background-color: #ffc107; width: 90%; max-width: 700px; margin: 50px auto; padding: 20px; border-radius: 10px;">
+<table class="table table-striped table-bordered" style="margin-top: 20px;">
+<thead>
+  <tr>
+    <th>Station</th>
+    <th>Days</th>
+    <th>Hours</th>
+    <th>Fee</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th>Santolan</th>
+    <th>Open everyday</th>
+    <th>Open 24 hours</th>
+    <th>10.00</th>
+  </tr>
+  <tr>
+    <th>Katipunan</th>
+    <th>Monday - Friday</th>
+    <th>Open 24 hours</th>
+    <th>5.00</th>
+  </tr>
+  <tr>
+    <th>Anonas</th>
+    <th>Open everyday</th>
+    <th>Open 24 hours</th>
+    <th>3.00</th>
+  </tr>
+    <tr>
+    <th>Araneta-Center Cubao</th>
+    <th>Monday - Saturday</th>
+    <th>6:00am - 12:00am</th>
+    <th>10.00</th>
+  </tr>
+  <tr>
+    <th>Betty Go-Belmonte</th>
+    <th>Monday - Friday</th>
+    <th>7:00am - 11:00pm</th>
+    <th>1.00</th>
+  </tr>
+    <tr>
+    <th>Gilmore</th>
+    <th>Open everyday</th>
+    <th>6:00am - 10:00pm</th>
+    <th>0.00</th>
+  </tr>
+  <tr>
+    <th>J. Ruiz</th>
+    <th>Monday- Friday</th>
+    <th>Open 24 hours</th>
+    <th>3.00</th>
+  </tr>
+  <tr>
+    <th>V. Mapa</th>
+    <th>Open everyday</th>
+    <th>Open 24 hours</th>
+    <th>5.00</th>
+  </tr>
+  <tr>
+    <th>Pureza</th>
+    <th>Monday - Friday</th>
+    <th>Open 24 hours</th>
+    <th>2.00</th>
+  </tr>
+  <tr>
+    <th>Legarda</th>
+    <th>Open everyday</th>
+    <th>Open 24 hours</th>
+    <th>1.00</th>
+  </tr>
+  <tr>
+    <th>Recto</th>
+    <th>Monday - Saturday</th>
+    <th>3:00am - 10:00pm</th>
+    <th>7.00</th>
+  </tr>
+</tbody>
+</table>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js "></script>
+</body>
+</html>
